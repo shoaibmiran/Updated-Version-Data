@@ -24,11 +24,7 @@ import org.json.JSONObject;
 
 public class Product_Alternatives_toERP {
 
-	// local tokens===token 5044ca637d73608:125c340d646f787
-	// beta and dev tokens===token a7d14051ef3941b:a738356d197551d
-	 private static final String PACKAGE_PRODUCT_ALTERNATIVES_URL = "http://betaerp.edawjar.in:8000/api/resource/Package Product Alternatives";
-	//private static final String PACKAGE_PRODUCT_ALTERNATIVES_URL = "http://13.232.237.47:8000/api/resource/Package Product Alternatives";
-	//private static final String PACKAGE_PRODUCT_ALTERNATIVES_URL = "http://192.168.0.9:8000/api/resource/Package Product Alternatives";
+	
 	private Client client = ClientBuilder.newClient();
 
 	public static void main(String[] args) throws JSONException, Exception {
@@ -572,23 +568,4 @@ public class Product_Alternatives_toERP {
 		return pid;
 	}
 
-	public Response createPackage_product_alternatives(Package_Product_Alternatives product_alternatives) {
-		JSONObject obj = new JSONObject(product_alternatives);
-		System.out.println("Package_Product_Alternatives---" + obj.toString());
-		try {
-
-			return client.target(PACKAGE_PRODUCT_ALTERNATIVES_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
-					.post(Entity.entity(product_alternatives, MediaType.APPLICATION_JSON));
-			
-//			return client.target(PACKAGE_PRODUCT_ALTERNATIVES_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
-//					.post(Entity.entity(product_alternatives, MediaType.APPLICATION_JSON));
-		} catch (Exception e) {
-			System.out.println("Exception " + e);
-		}
-		return null;
-
-	}
-
-}
+	
