@@ -31,9 +31,7 @@ public class Item_Group_ERP {
 	//CHANGE THE K VALUE EVERY TIME BASES ON NUMBE OF ITEM GROUP ARE IN ERP
 	static int k = 212;
 	
-	 private static final String ITEM_Group_URL = "http://13.232.237.47:8000/api/resource/Item Group";
 	
-	//private static final String ITEM_Group_URL = "http://betaerp.edawjar.in:8000/api/resource/Item Group";
 	private Client client = ClientBuilder.newClient();
 
 	public static void main(String[] args)throws JSONException, Exception {
@@ -159,18 +157,4 @@ public class Item_Group_ERP {
 		
 	}
 
-	public Response createItemgroup(Item_Group item_Group) {
-		JSONObject obj = new JSONObject(item_Group);
-		System.out.println("Item GROUP List---" + obj.toString());
-
-		try {
-			return client.target(ITEM_Group_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
-					.post(Entity.entity(item_Group, MediaType.APPLICATION_JSON));
-
-		} catch (Exception e) {
-			System.out.println("Exception " + e);
-		}
-		return null;
-	}
-}
+	
