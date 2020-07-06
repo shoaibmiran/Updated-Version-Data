@@ -17,39 +17,7 @@ import com.tap.model.Product_Bundle;
 import com.tap.model.Product_Bundle_Attribute;
 
 public class RestAPI {
-	// local tokens of ERP MANI===token 5044ca637d73608:125c340d646f787
-	// beta and dev tokens===token a7d14051ef3941b:a738356d197551d
-
-	// ##########DEV########################3
-//	private static final String ITEM_URL = "http://13.232.237.47:8000/api/resource/Item";
-//	private static final String PRODUCT_BUNDLE_URL = "http://13.232.237.47:8000/api/resource/Product Bundle";
-//	private static final String Hotel_ATTRIBUTES_URL = "http://13.232.237.47:8000/api/resource/Hotel Attribute";
-//	private static final String PRODUCT_BUNDLE_ATTRIBUTE_URL = "http://13.232.237.47:8000/api/resource/Product Bundle Attribute";
-//	private static final String LAND_PACKAGE_ATTRIBUTES_URL = "http://13.232.237.47:8000/api/resource/Land Package Attributes";
-//	private static final String PRICE_LIST_URL = "http://13.232.237.47:8000/api/resource/Price List";
-//	private static final String ITEM_PRICE_LIST_URL = "http://13.232.237.47:8000/api/resource/Item Price";
-//	private static final String REST_URI1 = "http://13.232.237.47:8000/api/method/login?usr=administrator&pwd=Strawberi@123";
-//	
-
-	// ################# setup beta#####3
-	private static final String ITEM_URL = "http://betaerp.edawjar.in:8000/api/resource/Item";
-	private static final String PRODUCT_BUNDLE_URL = "http://betaerp.edawjar.in:8000/api/resource/Product Bundle";
-	private static final String Hotel_ATTRIBUTES_URL = "http://betaerp.edawjar.in:8000/api/resource/Hotel Attribute";
-	private static final String PRODUCT_BUNDLE_ATTRIBUTE_URL = "http://betaerp.edawjar.in:8000/api/resource/Product Bundle Attribute";
-	private static final String LAND_PACKAGE_ATTRIBUTES_URL = "http://betaerp.edawjar.in:8000/api/resource/Land Package Attributes";
-	private static final String PRICE_LIST_URL = "http://betaerp.edawjar.in:8000/api/resource/Price List";
-	private static final String ITEM_PRICE_LIST_URL = "http://betaerp.edawjar.in:8000/api/resource/Item Price";
-	private static final String REST_URI1 = "http://betaerp.edawjar.in:8000/api/method/login?usr=administrator&pwd=Strawberi@123";
-
-	// ################# setup LOCAL mm#####
-//	private static final String ITEM_URL = "http://192.168.0.9:8000/api/resource/Item";
-//	private static final String PRODUCT_BUNDLE_URL = "http://192.168.0.9:8000/api/resource/Product Bundle";
-//	private static final String Hotel_ATTRIBUTES_URL = "http://192.168.0.9:8000/api/resource/Hotel Attribute";
-//	private static final String PRODUCT_BUNDLE_ATTRIBUTE_URL = "http://192.168.0.9:8000/api/resource/Product Bundle Attribute";
-//	private static final String LAND_PACKAGE_ATTRIBUTES_URL = "http://192.168.0.9:8000/api/resource/Land Package Attributes";
-//	private static final String PRICE_LIST_URL = "http://192.168.0.9:8000/api/resource/Price List";
-//	private static final String ITEM_PRICE_LIST_URL = "http://192.168.0.9:8000/api/resource/Item Price";
-//	private static final String REST_URI1 = "http://192.168.0.9:8000/api/method/login?usr=administrator&pwd=Strawberi@123";
+	
 
 	
 	private Client client = ClientBuilder.newClient();
@@ -74,11 +42,11 @@ public class RestAPI {
 		try {
 
 			return client.target(Hotel_ATTRIBUTES_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
+					.header("Authorization")
 					.post(Entity.entity(attributes, MediaType.APPLICATION_JSON));
 			
 //			return client.target(Hotel_ATTRIBUTES_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
+//					.header("Authorization")
 //					.post(Entity.entity(attributes, MediaType.APPLICATION_JSON));
 
 		} catch (Exception e) {
@@ -95,11 +63,11 @@ public class RestAPI {
 		try {
 
 			return client.target(PRODUCT_BUNDLE_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
+					.header("Authorization")
 					.post(Entity.entity(attributes, MediaType.APPLICATION_JSON));
 //			
 //			return client.target(PRODUCT_BUNDLE_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
+//					.header("Authorization")
 //					.post(Entity.entity(attributes, MediaType.APPLICATION_JSON));
 		} catch (Exception e) {
 			System.out.println("Exception " + e);
@@ -114,11 +82,11 @@ public class RestAPI {
 		try {
 
 			return client.target(PRODUCT_BUNDLE_ATTRIBUTE_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
+					.header("Authorization")
 					.post(Entity.entity(bundle_attribute, MediaType.APPLICATION_JSON));
 			
 //			return client.target(PRODUCT_BUNDLE_ATTRIBUTE_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
+//					.header("Authorization")
 //					.post(Entity.entity(bundle_attribute, MediaType.APPLICATION_JSON));
 		} catch (Exception e) {
 			System.out.println("Exception " + e);
@@ -133,10 +101,10 @@ public class RestAPI {
 		try {
 
 			return client.target(LAND_PACKAGE_ATTRIBUTES_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
+					.header("Authorization")
 					.post(Entity.entity(package_attribute, MediaType.APPLICATION_JSON));
 //			return client.target(LAND_PACKAGE_ATTRIBUTES_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
+//					.header("Authorization")
 //					.post(Entity.entity(package_attribute, MediaType.APPLICATION_JSON));
 		} catch (Exception e) {
 			System.out.println("Exception " + e);
@@ -151,11 +119,11 @@ public class RestAPI {
 		try {
 
 			return client.target(PRICE_LIST_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
+					.header("Authorization")
 					.post(Entity.entity(price_attribute, MediaType.APPLICATION_JSON));
 			
 //			return client.target(PRICE_LIST_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
+//					.header("Authorization")
 //					.post(Entity.entity(price_attribute, MediaType.APPLICATION_JSON));
 		} catch (Exception e) {
 			System.out.println("Exception " + e);
@@ -170,11 +138,11 @@ public class RestAPI {
 
 		try {
 			return client.target(ITEM_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
+					.header("Authorization")
 					.post(Entity.entity(sample_item, MediaType.APPLICATION_JSON));
 			
 //			return client.target(ITEM_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
+//					.header("Authorization")
 //					.post(Entity.entity(sample_item, MediaType.APPLICATION_JSON));
 
 		} catch (Exception e) {
@@ -190,11 +158,11 @@ public class RestAPI {
 
 		try {
 			return client.target(ITEM_PRICE_LIST_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
+					.header("Authorization")
 					.post(Entity.entity(sample_item, MediaType.APPLICATION_JSON));
 			
 //			return client.target(ITEM_PRICE_LIST_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
+//					.header("Authorization")
 //					.post(Entity.entity(sample_item, MediaType.APPLICATION_JSON));
 
 
