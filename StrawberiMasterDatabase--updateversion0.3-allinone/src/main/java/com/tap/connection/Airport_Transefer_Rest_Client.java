@@ -15,9 +15,9 @@ import com.tap.model.Item_Defaults;
 import com.tap.model.Item_Hasattributes;
 
 public class Airport_Transefer_Rest_Client {
-	//private static final String ITEM_URL ="http://betaerp.edawjar.in:8000/api/resource/Item";
-	private static final String ITEM_URL = "http://13.232.237.47:8000/api/resource/Item";
-	//private static final String ITEM_URL = "http://192.168.0.9:8000/api/resource/Item";
+	//private static final String ITEM_URL ="http://.in:8000/api/resource/Item";
+	private static final String ITEM_URL = "http://:8000/api/resource/Item";
+	//private static final String ITEM_URL = "http://:8000/api/resource/Item";
 	
 	
 	private Client client = ClientBuilder.newClient();
