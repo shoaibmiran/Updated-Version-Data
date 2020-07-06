@@ -15,9 +15,6 @@ import com.tap.model.Item_Defaults;
 import com.tap.model.Item_Hasattributes;
 
 public class Airport_Transefer_Rest_Client {
-	//private static final String ITEM_URL ="http://.in:8000/api/resource/Item";
-	private static final String ITEM_URL = "http://:8000/api/resource/Item";
-	//private static final String ITEM_URL = "http://:8000/api/resource/Item";
 	
 	
 	private Client client = ClientBuilder.newClient();
@@ -116,46 +113,9 @@ public class Airport_Transefer_Rest_Client {
 		
 	}
 	
-	public Response createAirportTransferTemplate(Item2 air_temp) {
-		JSONObject obj = new JSONObject(air_temp);
-			System.out.println("Airport transfer template to push into erpnext------> " + obj.toString());
-			//System.exit(1);
-		try {
-
-			return client.target(ITEM_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
-					.post(Entity.entity(air_temp, MediaType.APPLICATION_JSON));
-			
-//			return client.target(ITEM_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
-//					.post(Entity.entity(air_temp, MediaType.APPLICATION_JSON));
-		} catch (Exception e) {
-			System.out.println("Exception " + e);
-		}
-		return null;
-
-	}
 	
-	public Response createAirportTransferVariants(Item2 air_temp) {
-		JSONObject obj = new JSONObject(air_temp);
-			System.out.println("Airport transfer variants to push into erpnext------> " + obj.toString());
-			//System.exit(1);
-		
-		try {
-
-			return client.target(ITEM_URL).request(MediaType.APPLICATION_JSON)
-					.header("Authorization", "token a7d14051ef3941b:a738356d197551d")
-					.post(Entity.entity(air_temp, MediaType.APPLICATION_JSON));
-			
-//			return client.target(ITEM_URL).request(MediaType.APPLICATION_JSON)
-//					.header("Authorization", "token 5044ca637d73608:125c340d646f787")
-//					.post(Entity.entity(air_temp, MediaType.APPLICATION_JSON));
-		} catch (Exception e) {
-			System.out.println("Exception " + e);
-		}
-		return null;
-
-	}
+	
+	
 	public static void setAirportTransferVariants() {
 	
 		Airport_Transefer_Rest_Client rc=new Airport_Transefer_Rest_Client();
